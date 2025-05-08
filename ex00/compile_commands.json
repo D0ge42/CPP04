@@ -1,0 +1,86 @@
+[
+ {
+  "directory": "/nfs/homes/lonulli/CPP04/ex00",
+  "file": "srcs/main.cpp",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-c",
+   "srcs/main.cpp"
+  ]
+ },
+ {
+  "directory": "/nfs/homes/lonulli/CPP04/ex00",
+  "file": "srcs/Cat.cpp",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-c",
+   "srcs/Cat.cpp"
+  ]
+ },
+ {
+  "directory": "/nfs/homes/lonulli/CPP04/ex00",
+  "file": "srcs/Dog.cpp",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-c",
+   "srcs/Dog.cpp"
+  ]
+ },
+ {
+  "directory": "/nfs/homes/lonulli/CPP04/ex00",
+  "file": "srcs/Animal.cpp",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-c",
+   "srcs/Animal.cpp"
+  ]
+ },
+ {
+  "directory": "/nfs/homes/lonulli/CPP04/ex00",
+  "file": "srcs/WrongAnimal.cpp",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-c",
+   "srcs/WrongAnimal.cpp"
+  ]
+ },
+ {
+  "directory": "/nfs/homes/lonulli/CPP04/ex00",
+  "file": "srcs/WrongCat.cpp",
+  "arguments": [
+   "c++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-c",
+   "srcs/WrongCat.cpp"
+  ]
+ }
+]
