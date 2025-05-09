@@ -1,7 +1,7 @@
 #include "WrongCat.hpp"
 #include <iostream>
 
-WrongCat::WrongCat()
+WrongCat::WrongCat():WrongAnimal()
 {
   std::cout << "WrongCat constructor called\n";
 }

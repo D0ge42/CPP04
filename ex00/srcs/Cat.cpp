@@ -1,7 +1,7 @@
 #include "Cat.hpp"
 #include <iostream>
 
-Cat::Cat()
+Cat::Cat():Animal(),_type("Cat")
 {
   std::cout << "Cat constructor called\n";
 }
@@ -31,5 +31,5 @@ std::string Cat::getType() const
 
 void Cat::makeSound() const
 {
-  std::cout << "Cat goes meow\n" << std::endl;
+  std::cout << "Cat goes meow" << std::endl;
 }

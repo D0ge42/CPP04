@@ -1,7 +1,7 @@
 #include "WrongAnimal.hpp"
 #include <iostream>
 
-WrongAnimal::WrongAnimal()
+WrongAnimal::WrongAnimal():_type("WrongAnimal")
 {
   std::cout << "WrongAnimal constructor called\n";
 }

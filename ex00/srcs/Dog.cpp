@@ -31,5 +31,5 @@ std::string Dog::getType() const
 
 void Dog::makeSound() const
 {
-  std::cout << "Dog goes woof\n" << std::endl;
+  std::cout << "Dog goes woof" << std::endl;
 }

@@ -1,7 +1,7 @@
 NAME = animal
 
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes -g -gdwarf-4
 
 SRC_DIR = srcs
 OBJ_DIR = objs
