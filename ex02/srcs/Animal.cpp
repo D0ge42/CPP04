@@ -3,12 +3,12 @@
 
 Animal::Animal():_type("Generic animal")
 {
-  std::cout << "Animal constructor called\n";
+  std::cout << "Animal \033[1;92mconstructor called\033[0m\n";
 }
 
 Animal::~Animal()
 {
-  std::cout << "Animal destructor called\n";
+  std::cout << "Animal \033[1;91mdestructor called\033[0m\n";
 }
 Animal& Animal::operator=(const Animal &ref)
 {
@@ -32,3 +32,4 @@ void Animal::makeSound() const
 {
   std::cout << "Zoo noises" << std::endl ;
 }
+
