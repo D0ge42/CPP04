@@ -1,18 +1,44 @@
 #include "Character.hpp"
-#include <iostream>
 #include "AMateria.hpp"
 #include "Character.hpp"
+#include <cstdio>
 
-Character::Character():items_count(0)
+
+Character::Character():_items_count(0)
 {
   for (int i = 0; i < 4; i++)
     _inventory[i] = NULL;
+}
+
+Character::~Character()
+{
+  for (int i = 0; i < 4; i++)
+    delete this->_inventory[i];
 }
 
 Character::Character(std::string const &name):_name(name)
 {
   for (int i = 0; i < 4; i++)
     _inventory[i] = NULL;
+}
+
+Character &Character::operator=(const Character &other)
+{
+  this->_name = other._name + "_copy";
+  this->_items_count = other._items_count;
+  for (int i = 0; i < 4; i++)
+    delete _inventory[i];
+  for (int i = 0; i < 4 ; i++)
+    this->_inventory[i] = other._inventory[i]->clone();
+  return (*this);
+}
+
+Character::Character(const Character &other)
+{
+  for (int i = 0; i < 4; i++)
+    delete _inventory[i];
+  for (int i = 0; i < 4 ; i++)
+    this->_inventory[i] = other._inventory[i]->clone();
 }
 
 std::string const &Character::getName() const
@@ -22,7 +48,8 @@ std::string const &Character::getName() const
 
 void Character::use(int idx, ICharacter &ref)
 {
-  this->_inventory[idx]->use(ref);
+  if (this->_inventory[idx])
+    this->_inventory[idx]->use(ref);
 }
 
 void Character::equip(AMateria *m)
@@ -31,4 +58,10 @@ void Character::equip(AMateria *m)
   while(_inventory[i])
     i++;
   _inventory[i] = m;
+}
+
+
+void Character::unequip(int idx)
+{
+  this->_inventory[idx] = NULL;
 }
