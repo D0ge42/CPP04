@@ -1,13 +1,13 @@
 #include "Ice.hpp"
 #include <iostream>
+#include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-Ice::Ice():_type("ice")
+Ice::Ice():AMateria("ice")
 {
-  std::cout << this->_type << " constructed\n";
 }
 
-Ice::Ice(std::string const &type):_type(type)
+Ice::Ice(std::string const &type):AMateria(type)
 {
 }
 
@@ -26,15 +26,13 @@ void Ice::use(ICharacter &ref)
 
 Ice::Ice(const Ice &ref):AMateria(ref)
 {
-  std::cout << "Ice copy constructor called" << std::endl;
-  this->_type = ref.getType();
+  this->_type = ref._type;
   *this = ref;
 }
 
 Ice &Ice::operator=(const Ice &ref)
 {
   this->_type = ref._type;
-  std::cout << "Ice assignment operator called" << std::endl;
   return *this;
 }
 

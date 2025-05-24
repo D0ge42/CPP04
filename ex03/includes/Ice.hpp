@@ -5,7 +5,7 @@
 class Ice: public AMateria
 {
   private:
-    std::string _type;
+    // std::string _type;
   public:
     // OCF
     Ice();

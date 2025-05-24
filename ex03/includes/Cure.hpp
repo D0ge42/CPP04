@@ -5,7 +5,7 @@
 class Cure: public AMateria
 {
   private:
-    std::string _type;
+    // std::string _type;
   public:
     Cure();
     ~Cure();

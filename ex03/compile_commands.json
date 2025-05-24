@@ -1,30 +1,110 @@
 [
  {
-  "directory": "/nfs/homes/lonulli/CPP04/ex03",
-  "file": "srcs/main.cpp",
+  "directory": "/home/doge/CPP04/ex03",
   "arguments": [
-   "c++",
+   "g++",
    "-Wall",
    "-Wextra",
    "-Werror",
    "-std=c++98",
    "-Iincludes",
+   "-g",
+   "-gdwarf-4",
    "-c",
-   "srcs/main.cpp"
-  ]
+   "srcs/main.cpp",
+   "-o",
+   "objs/main.o"
+  ],
+  "file": "srcs/main.cpp"
  },
  {
-  "directory": "/nfs/homes/lonulli/CPP04/ex03",
-  "file": "srcs/AMateria.cpp",
+  "directory": "/home/doge/CPP04/ex03",
   "arguments": [
-   "c++",
+   "g++",
    "-Wall",
    "-Wextra",
    "-Werror",
    "-std=c++98",
    "-Iincludes",
+   "-g",
+   "-gdwarf-4",
    "-c",
-   "srcs/AMateria.cpp"
-  ]
+   "srcs/AMateria.cpp",
+   "-o",
+   "objs/AMateria.o"
+  ],
+  "file": "srcs/AMateria.cpp"
+ },
+ {
+  "directory": "/home/doge/CPP04/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-g",
+   "-gdwarf-4",
+   "-c",
+   "srcs/Character.cpp",
+   "-o",
+   "objs/Character.o"
+  ],
+  "file": "srcs/Character.cpp"
+ },
+ {
+  "directory": "/home/doge/CPP04/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-g",
+   "-gdwarf-4",
+   "-c",
+   "srcs/Cure.cpp",
+   "-o",
+   "objs/Cure.o"
+  ],
+  "file": "srcs/Cure.cpp"
+ },
+ {
+  "directory": "/home/doge/CPP04/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-g",
+   "-gdwarf-4",
+   "-c",
+   "srcs/Ice.cpp",
+   "-o",
+   "objs/Ice.o"
+  ],
+  "file": "srcs/Ice.cpp"
+ },
+ {
+  "directory": "/home/doge/CPP04/ex03",
+  "arguments": [
+   "g++",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "-std=c++98",
+   "-Iincludes",
+   "-g",
+   "-gdwarf-4",
+   "-c",
+   "srcs/MateriaSource.cpp",
+   "-o",
+   "objs/MateriaSource.o"
+  ],
+  "file": "srcs/MateriaSource.cpp"
  }
 ]

@@ -6,27 +6,22 @@ void MateriaSource::learnMateria(AMateria *ptr)
   size_t i = 0;
   while(i < 4 && _learnedMateria[i] != NULL)
     i++;
-  // Max numbers of materia source learned
   if (i == 4)
+  {
     std::cout << "You cannot learn more materia" << std::endl;
+    delete ptr;
+  }
   else
   {
     if (ptr)
-    {
       this->_learnedMateria[i] = ptr;
-      std::cout << "New materia added to inventory at index " << i << std::endl;
-    }
   }
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-  printMaterias();
   for (int i = 0; i < 4; i++)
   {
-    std::cout << "to check: " << type << std::endl;
-    if (this->_learnedMateria[i])
-      std::cout << "type: " << this->_learnedMateria[i]->getType() << std::endl;
     if (this->_learnedMateria[i] && this->_learnedMateria[i]->getType() == type)
     {
       std::cout << "New materia of type: " << type << " created" << std::endl;
@@ -50,7 +45,6 @@ MateriaSource::MateriaSource(const MateriaSource &other)
     if (other._learnedMateria[i])
       this->_learnedMateria[i] = other._learnedMateria[i]->clone();
   }
-  std::cout << "Materia source was created from copy\n";
 }
 
 MateriaSource::~MateriaSource(void)

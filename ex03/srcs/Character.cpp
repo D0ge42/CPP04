@@ -2,6 +2,7 @@
 #include "AMateria.hpp"
 #include "Character.hpp"
 #include <cstdio>
+#include <iostream>
 
 
 Character::Character():_items_count(0)
@@ -18,8 +19,11 @@ Character::~Character()
 
 Character::Character(std::string const &name):_name(name)
 {
-  for (int i = 0; i < 4; i++)
-    _inventory[i] = NULL;
+  if (&name == NULL)
+  {
+    for (int i = 0; i < 4; i++)
+      _inventory[i] = NULL;
+  }
 }
 
 Character &Character::operator=(const Character &other)
@@ -50,6 +54,8 @@ void Character::use(int idx, ICharacter &ref)
 {
   if (this->_inventory[idx])
     this->_inventory[idx]->use(ref);
+  else
+    std::cout << "can't use a materia that doesn't exists" << std::endl;
 }
 
 void Character::equip(AMateria *m)
@@ -57,11 +63,27 @@ void Character::equip(AMateria *m)
   int i = 0;
   while(_inventory[i])
     i++;
-  _inventory[i] = m;
+  if (m)
+  {
+    _inventory[i] = m;
+    std::cout << "equipped " << m->getType() << std::endl;
+  }
 }
 
 
 void Character::unequip(int idx)
 {
-  this->_inventory[idx] = NULL;
+  if (idx >= 0 && idx <= 3)
+  {
+    this->_inventory[idx] = NULL;
+  }
+}
+
+AMateria *Character::getPtr(int idx) const
+{
+  if (idx >= 0 && idx <= 3)
+  {
+    return this->_inventory[idx];
+  }
+  return NULL;
 }

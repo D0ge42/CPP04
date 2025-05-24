@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AMateria.hpp"
 #include "ICharacter.hpp"
 #include <string>
 
@@ -19,4 +20,5 @@ class Character : public ICharacter
     void equip(AMateria* m);
     void unequip(int idx);
     void use(int idx, ICharacter &target);
+    AMateria *getPtr(int idx) const;
 };
