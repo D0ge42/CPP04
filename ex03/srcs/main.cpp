@@ -100,5 +100,23 @@ int main()
   delete me3;
   delete src3;
 
+  std::cout << "\n⚠️\033[1;95m -- NULL TEST \033[0m\n" << std::endl;
+
+
+  IMateriaSource* src4 = new MateriaSource();
+  src3->learnMateria(NULL);
+
+  ICharacter* me4 = new Character(NULL);
+
+
+  AMateria* tmp4;
+  tmp4 = src4->createMateria(NULL); // Stored at index 0
+  me4 ->equip(tmp4);
+
+  ICharacter* bib = new Character("bib");
+  me4->use(0, *bib);
+  delete bib;
+  delete me4;
+  delete src4;
   return 0;
 }

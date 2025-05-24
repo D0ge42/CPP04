@@ -19,11 +19,8 @@ Character::~Character()
 
 Character::Character(std::string const &name):_name(name)
 {
-  if (&name == NULL)
-  {
     for (int i = 0; i < 4; i++)
       _inventory[i] = NULL;
-  }
 }
 
 Character &Character::operator=(const Character &other)
