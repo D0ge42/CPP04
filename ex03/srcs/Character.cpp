@@ -20,7 +20,7 @@ Character::~Character()
   }
 }
 
-Character::Character(std::string const &name):_name(name)
+Character::Character(std::string const &name):_name(name),_items_count(0)
 {
     for (int i = 0; i < 4; i++)
       _inventory[i] = NULL;
@@ -65,13 +65,20 @@ void Character::equip(AMateria *m)
 {
   int i = 0;
   while(_inventory[i])
+  {
+    if (_inventory[i] == m)
+    {
+      std::cout << "item already equipped " << std::endl;
+      return;
+    }
     i++;
+  }
   std::cout <<  "items count = " << _items_count << std::endl;
   if (m && _items_count < 4)
   {
-    _inventory[i] = m;
-    std::cout << "equipped " << m->getType() << std::endl;
-    this->_items_count++;
+      _inventory[i] = m;
+      std::cout << "equipped " << m->getType() << std::endl;
+      this->_items_count++;
   }
 }
 

@@ -77,7 +77,7 @@ int main()
   delete me2;
   delete src2;
 
-  std::cout << "\n⚠️\033[1;95m -- Too many materias \033[0m\n" << std::endl;
+  std::cout << "\n⚠️\033[1;95m -- Too many materias/Same Materias being equipped \033[0m\n" << std::endl;
 
 
   IMateriaSource* src3 = new MateriaSource();
@@ -99,7 +99,7 @@ int main()
   me3->equip(tmp3);
   me3->equip(tmp4);
   me3->equip(tmp4);
-  me3->equip(tmp3);
+  me3->equip(tmp3);  // check addresses
 
   ICharacter* bab = new Character("bab");
   me3->use(0, *bab);
