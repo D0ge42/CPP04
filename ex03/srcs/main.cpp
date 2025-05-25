@@ -82,41 +82,56 @@ int main()
 
   IMateriaSource* src3 = new MateriaSource();
   src3->learnMateria(new Ice());
-  src3->learnMateria(new Ice());
-  src3->learnMateria(new Ice());
+  src3->learnMateria(new Cure());
+  src3->learnMateria(new Cure());
   src3->learnMateria(new Ice());
   src3->learnMateria(new Ice());
 
   ICharacter* me3 = new Character("me");
+  std::cout << "items count = " << me3->getItemCount() << std::endl;
 
 
   AMateria* tmp3;
-  tmp3 = src3->createMateria("ice"); // Stored at index 0
+  AMateria* tmp4;
+  tmp3 = src3-> createMateria("ice"); // Stored at index 0
+  tmp4 = src3-> createMateria("cure"); // Stored at index 0
+  me3->equip(tmp3);
+  me3->equip(tmp3);
+  me3->equip(tmp4);
+  me3->equip(tmp4);
   me3->equip(tmp3);
 
   ICharacter* bab = new Character("bab");
   me3->use(0, *bab);
+  me3->use(1, *bab);
+  me3->use(2, *bab);
   delete bab;
   delete me3;
   delete src3;
 
-  std::cout << "\n⚠️\033[1;95m -- NULL TEST \033[0m\n" << std::endl;
+  // This test would fail since a reference cannot be NULL by since we're passing
+  // a const char * to a std::string we're able to pass it. If the reference wasn't const
+  // the program wouldn't even compile.
+  //
+  // std::cout << "\n⚠️\033[1;95m -- NULL TEST \033[0m\n" << std::endl;
+  //
+  //
+  // IMateriaSource* src4 = new MateriaSource();
+  // src3->learnMateria(NULL);
+  //
+  // ICharacter* me4 = new Character(NULL);
+  //
+  //
+  // AMateria* tmp4;
+  // tmp4 = src4->createMateria(NULL); // Stored at index 0
+  // me4 ->equip(tmp4);
+  //
+  // ICharacter* bib = new Character("bib");
+  // me4->use(0, *bib);
+  // delete bib;
+  // delete me4;
+  // delete src4;
 
 
-  IMateriaSource* src4 = new MateriaSource();
-  src3->learnMateria(NULL);
-
-  ICharacter* me4 = new Character(NULL);
-
-
-  AMateria* tmp4;
-  tmp4 = src4->createMateria(NULL); // Stored at index 0
-  me4 ->equip(tmp4);
-
-  ICharacter* bib = new Character("bib");
-  me4->use(0, *bib);
-  delete bib;
-  delete me4;
-  delete src4;
   return 0;
 }

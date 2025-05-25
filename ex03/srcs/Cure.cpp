@@ -21,12 +21,13 @@ std::string const &Cure::getType() const
 
 Cure::Cure(const Cure &ref):AMateria(ref)
 {
+  this->_type = ref._type;
   *this = ref;
 }
 
 Cure &Cure::operator=(const Cure &ref)
 {
-  (void)ref;
+  this->_type = ref._type;
   return *this;
 }
 
