@@ -9,6 +9,7 @@
 
 int main()
 {
+
   std::cout << "\n🚀\033[1;91m -- Main test\033[0m\n" << std::endl;
   IMateriaSource* src = new MateriaSource();
   src->learnMateria(new Ice());
@@ -30,6 +31,34 @@ int main()
   delete me;
   delete src;
 
+  std::cout << "\n🚀\033[1;91m -- Copy constructor test \033[0m\n" << std::endl;
+
+  Character a;
+  {
+    IMateriaSource*src = new MateriaSource();
+    src->learnMateria(new Ice());
+    tmp = src->createMateria("ice");
+    a.equip(tmp);
+    std::cout << std::hex << a.getPtr(0) << std::endl;
+    Character b = a;
+    std::cout << std::hex << b.getPtr(0) << std::endl;
+    delete src;
+  }
+
+  std::cout << "\n🚀\033[1;91m -- Copy assignment test \033[0m\n" << std::endl;
+
+  Character c;
+  {
+    IMateriaSource*src = new MateriaSource();
+    src->learnMateria(new Ice());
+    tmp = src->createMateria("ice");
+    c.equip(tmp);
+    std::cout << std::hex << c.getPtr(0) << std::endl;
+    Character b;
+    b = c;
+    std::cout << std::hex << b.getPtr(0) << std::endl;
+    delete src;
+  }
 
   std::cout << "\n🤲\033[1;93m -- Unequip test \033[0m\n" << std::endl;
 

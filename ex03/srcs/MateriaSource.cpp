@@ -41,6 +41,8 @@ MateriaSource::MateriaSource(void)
 MateriaSource::MateriaSource(const MateriaSource &other)
 {
   for (int i = 0; i < 4; i++)
+    this->_learnedMateria[i] = NULL;
+  for (int i = 0; i < 4; i++)
   {
     if (other._learnedMateria[i])
       this->_learnedMateria[i] = other._learnedMateria[i]->clone();

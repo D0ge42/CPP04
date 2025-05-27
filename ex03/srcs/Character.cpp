@@ -31,9 +31,12 @@ Character &Character::operator=(const Character &other)
   this->_name = other._name + "_copy";
   this->_items_count = other._items_count;
   for (int i = 0; i < 4; i++)
-    delete _inventory[i];
+      delete _inventory[i];
   for (int i = 0; i < 4 ; i++)
-    this->_inventory[i] = other._inventory[i]->clone();
+  {
+    if (other._inventory[i])
+      this->_inventory[i] = other._inventory[i]->clone();
+  }
   this->_items_count = other._items_count;
   return (*this);
 }
@@ -42,10 +45,16 @@ Character::Character(const Character &other)
 {
   this->_name = other._name;
   for (int i = 0; i < 4; i++)
-    delete _inventory[i];
+    this->_inventory[i] = NULL;
+  for (int i = 0; i < 4; i++)
+      delete _inventory[i];
   for (int i = 0; i < 4 ; i++)
-    this->_inventory[i] = other._inventory[i]->clone();
+  {
+    if ((other._inventory)[i])
+      this->_inventory[i] = other._inventory[i]->clone();
+  }
   this->_items_count = other._items_count;
+  *this = other;
 }
 
 std::string const &Character::getName() const

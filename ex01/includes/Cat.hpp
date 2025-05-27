@@ -18,5 +18,5 @@ class Cat: public Animal
     // getType
     std::string getType() const;
     void makeSound() const;
-
+    void printBrainAddress() const;
 };

@@ -17,4 +17,5 @@ class Dog: public Animal
 
     std::string getType() const;
     void makeSound() const;
+    void printBrainAddress() const;
 };

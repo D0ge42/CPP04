@@ -15,6 +15,14 @@ int main()
     deep_animals[i] = new Cat();
 
 
+  std::cout << "\n\033[1;93m CORRECTION SHEET TEST \033[0m\n";
+  Dog basic;
+  {
+    basic.printBrainAddress();
+    Dog tmp = basic;
+    tmp.printBrainAddress();
+  }
+
  std::cout << "\n\033[1;95mSOUND\033[0m🔉\n";
   for (int i = 0; i < 10;i++)
     deep_animals[i]->makeSound();

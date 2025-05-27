@@ -16,12 +16,14 @@ Dog::~Dog()
 Dog& Dog::operator=(const Dog &ref)
 {
   std::cout << "Dog copy assignment called\n";
+  *this->brain = *ref.brain;
   this->_type = ref._type;
   return *this;
 }
 
 Dog::Dog(const Dog &ref):Animal(ref)
 {
+  this->brain = new Brain();
   std::cout << "Dog constructor called\n";
   *this = ref;
 }
@@ -36,7 +38,7 @@ void Dog::makeSound() const
   std::cout << "Dog goes woof🐕" << std::endl;
 }
 
-void Dog::printBrainAddress()
+void Dog::printBrainAddress() const
 {
   std::cout << std::hex << "\033[1;93m" << this->brain << "\033[0m"   << std::endl;
 }

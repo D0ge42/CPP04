@@ -12,7 +12,9 @@ Ice::Ice(std::string const &type):AMateria(type)
 }
 
 Ice::~Ice()
-{}
+{
+
+}
 
 std::string const &Ice::getType() const
 {
